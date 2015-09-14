@@ -16,6 +16,7 @@
 		2269E98C1B07D54200315741 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2269E98A1B07D54200315741 /* LaunchScreen.xib */; };
 		2269E9981B07D54200315741 /* Pet_FinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2269E9971B07D54200315741 /* Pet_FinderTests.swift */; };
 		2269E9A21B07E03500315741 /* PetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2269E9A11B07E03500315741 /* PetTableViewController.swift */; };
+		2AD144B31BA6DAA5006AD958 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD144B21BA6DAA5006AD958 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		2269E9961B07D54200315741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2269E9971B07D54200315741 /* Pet_FinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet_FinderTests.swift; sourceTree = "<group>"; };
 		2269E9A11B07E03500315741 /* PetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PetTableViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		2AD144B21BA6DAA5006AD958 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Theme.swift; path = ../Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		2269E97C1B07D54200315741 /* Pet Finder */ = {
 			isa = PBXGroup;
 			children = (
+				2AD144B21BA6DAA5006AD958 /* Theme.swift */,
 				2269E9A11B07E03500315741 /* PetTableViewController.swift */,
 				220215751B07F3C00000E359 /* SearchTableViewController.swift */,
 				220215791B0804F90000E359 /* SettingsTableViewController.swift */,
@@ -224,6 +227,7 @@
 				2269E9801B07D54200315741 /* AppDelegate.swift in Sources */,
 				2202157A1B0804F90000E359 /* SettingsTableViewController.swift in Sources */,
 				2269E9A21B07E03500315741 /* PetTableViewController.swift in Sources */,
+				2AD144B31BA6DAA5006AD958 /* Theme.swift in Sources */,
 				220215761B07F3C00000E359 /* SearchTableViewController.swift in Sources */,
 				224279DA1B2FC37B00E3B816 /* PetViewController.swift in Sources */,
 			);
