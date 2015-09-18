@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    let theme = ThemeManager.currentTheme()
+    ThemeManager.applyTheme(theme)
     return true
   }
 }

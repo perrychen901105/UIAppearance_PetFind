@@ -21,6 +21,19 @@ enum Theme: Int {
             return UIColor(red: 10.0/255.0, green: 10.0/255.0, blue: 10.0/255.0, alpha: 1.0)
         }
     }
+    
+    var barStyle: UIBarStyle {
+        switch self {
+        case .Default, .Graphical:
+            return .Default
+        case .Dark:
+            return .Black
+        }
+    }
+    
+    var navigationBackgroundImage: UIImage? {
+        return self == .Graphical ? UIImage(named: "navBackground") : nil
+    }
 }
 let SelectedThemeKey = "SelectedTheme"
 struct ThemeManager {
@@ -30,5 +43,21 @@ struct ThemeManager {
         } else {
             return .Default
         }
+    }
+    
+    static func applyTheme(theme: Theme) {
+        // 1   persist the selected theme using NSUserDefaults
+        NSUserDefaults.standardUserDefaults().setValue(theme.rawValue, forKey: SelectedThemeKey)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        // 2
+        let sharedApplication = UIApplication.sharedApplication()
+        sharedApplication.delegate?.window??.tintColor = theme.mainColor
+        
+        UINavigationBar.appearance().barStyle = theme.barStyle
+        UINavigationBar.appearance().setBackgroundImage(theme.navigationBackgroundImage, forBarMetrics: .Default)
+        
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backArrow")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backArrow")
     }
 }
