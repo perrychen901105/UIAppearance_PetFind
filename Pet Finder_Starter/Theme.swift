@@ -34,6 +34,30 @@ enum Theme: Int {
     var navigationBackgroundImage: UIImage? {
         return self == .Graphical ? UIImage(named: "navBackground") : nil
     }
+    
+    var tabBarBackgroundImage: UIImage? {
+        return self == .Graphical ? UIImage(named: "tabBarBackground") : nil
+    }
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .Default, .Graphical:
+            return UIColor(white: 0.9, alpha: 1.0)
+        case .Dark:
+            return UIColor(white: 0.8, alpha: 1.0)
+        }
+    }
+    
+    var secondaryColor: UIColor {
+        switch self {
+        case .Default:
+            return UIColor(red: 242.0/255.0, green: 101.0/255.0, blue:34.0/255.0 , alpha: 1.0)
+        case .Dark:
+            return UIColor(red: 34.0/255.0, green: 128.0/255.0, blue:64.0/255.0 , alpha: 1.0)
+        case .Graphical:
+            return UIColor(red: 140.0/255.0, green: 50.0/255.0, blue:48.0/255.0 , alpha: 1.0)
+        }
+    }
 }
 let SelectedThemeKey = "SelectedTheme"
 struct ThemeManager {
@@ -59,5 +83,12 @@ struct ThemeManager {
         
         UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backArrow")
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backArrow")
+        
+        UITabBar.appearance().barStyle = theme.barStyle
+        UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
+        
+        let tabIndicator = UIImage(named: "tabBarSelectionIndicator")?.imageWithRenderingMode(.AlwaysTemplate)
+        let tapGestureIndicator = tabIndicator?.resizableImageWithCapInsets(UIEdgeInsets(top: 0, left: 2.0, bottom: 0, right: 2.0))
+        UITabBar.appearance().selectionIndicatorImage = tapGestureIndicator
     }
 }

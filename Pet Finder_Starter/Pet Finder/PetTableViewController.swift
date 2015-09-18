@@ -48,23 +48,23 @@ class PetTableViewController: UITableViewController, UIPopoverPresentationContro
   // MARK: - Search
 
   func search() {
-    let searchViewController = storyboard?.instantiateViewControllerWithIdentifier("SearchTableViewController") as? UIViewController
+    let searchViewController = storyboard!.instantiateViewControllerWithIdentifier("SearchTableViewController")
     
-    searchViewController?.modalPresentationStyle = .Popover
-    searchViewController?.modalTransitionStyle = .CoverVertical
-    searchViewController?.popoverPresentationController?.delegate = self
-    presentViewController(searchViewController!, animated: true, completion: nil)
+    searchViewController.modalPresentationStyle = .Popover
+    searchViewController.modalTransitionStyle = .CoverVertical
+    searchViewController.popoverPresentationController?.delegate = self
+    presentViewController(searchViewController, animated: true, completion: nil)
   }
 
   // MARK: - Settings
   
   func settings() {
-    let settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingsTableViewController") as? UIViewController
+    let settingsViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingsTableViewController")
     
-    settingsViewController?.modalPresentationStyle = .Popover
-    settingsViewController?.modalTransitionStyle = .CoverVertical
-    settingsViewController?.popoverPresentationController?.delegate = self
-    presentViewController(settingsViewController!, animated: true, completion: nil)
+    settingsViewController.modalPresentationStyle = .Popover
+    settingsViewController.modalTransitionStyle = .CoverVertical
+    settingsViewController.popoverPresentationController?.delegate = self
+    presentViewController(settingsViewController, animated: true, completion: nil)
   }
 
   // MARK: - Popover
@@ -86,7 +86,7 @@ class PetTableViewController: UITableViewController, UIPopoverPresentationContro
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("PetCell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("PetCell", forIndexPath: indexPath) 
     
     cell.imageView!.image = UIImage(named: "pet\(indexPath.row)")
     cell.imageView!.layer.masksToBounds = true
