@@ -45,21 +45,43 @@ class PetTableViewController: UITableViewController, UIPopoverPresentationContro
     super.viewWillAppear(animated)
   }
     
-  // MARK: - Search
+//  // MARK: - Search
+//  
+//  func search() {
+//    let searchViewController = storyboard!.instantiateViewControllerWithIdentifier("SearchTableViewController")
+//    
+//    searchViewController.modalPresentationStyle = .Popover
+//    searchViewController.modalTransitionStyle = .CoverVertical
+//    searchViewController.popoverPresentationController?.delegate = self
+//    presentViewController(searchViewController, animated: true, completion: nil)
+//  }
+//  
+//  // MARK: - Settings
+//  
+//  func settings() {
+//    let settingsViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingsTableViewController")
+//    
+//    settingsViewController.modalPresentationStyle = .Popover
+//    settingsViewController.modalTransitionStyle = .CoverVertical
+//    settingsViewController.popoverPresentationController?.delegate = self
+//    presentViewController(settingsViewController, animated: true, completion: nil)
+//  }
 
+  // MARK: - Search
+  
   func search() {
-    let searchViewController = storyboard!.instantiateViewControllerWithIdentifier("SearchTableViewController")
+    let searchViewController = storyboard!.instantiateViewControllerWithIdentifier("SearchTableViewController") as! SearchTableViewController
     
     searchViewController.modalPresentationStyle = .Popover
     searchViewController.modalTransitionStyle = .CoverVertical
     searchViewController.popoverPresentationController?.delegate = self
     presentViewController(searchViewController, animated: true, completion: nil)
   }
-
+  
   // MARK: - Settings
   
   func settings() {
-    let settingsViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingsTableViewController")
+    let settingsViewController = storyboard!.instantiateViewControllerWithIdentifier("SettingsTableViewController") as! SettingsTableViewController
     
     settingsViewController.modalPresentationStyle = .Popover
     settingsViewController.modalTransitionStyle = .CoverVertical
@@ -67,6 +89,7 @@ class PetTableViewController: UITableViewController, UIPopoverPresentationContro
     presentViewController(settingsViewController, animated: true, completion: nil)
   }
 
+  
   // MARK: - Popover
   
   func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -86,7 +109,7 @@ class PetTableViewController: UITableViewController, UIPopoverPresentationContro
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("PetCell", forIndexPath: indexPath) 
+    let cell = tableView.dequeueReusableCellWithIdentifier("PetCell", forIndexPath: indexPath) as! UITableViewCell
     
     cell.imageView!.image = UIImage(named: "pet\(indexPath.row)")
     cell.imageView!.layer.masksToBounds = true

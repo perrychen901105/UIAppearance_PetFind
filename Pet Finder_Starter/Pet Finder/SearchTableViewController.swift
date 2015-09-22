@@ -25,6 +25,9 @@ class SearchTableViewController: UITableViewController, UITextFieldDelegate {
     
     updateNumberOfPaws(pawStepper)
     updateDistance(distanceSlider)
+    
+    speciesSelector.setImage(UIImage(named: "dog"), forSegmentAtIndex: 0)
+    speciesSelector.setImage(UIImage(named: "cat"), forSegmentAtIndex: 1)
   }
   
   func dismiss() {
